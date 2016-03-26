@@ -48,10 +48,30 @@ import java.util.List;
 
 
 
+
 public class MainActivity extends Activity implements View.OnClickListener {
 
+    final int LIMIT_STRESS_RANGE = 1000;
+    int counter = 0;
+    int calibrationCounter = 0;
+    double totalFirst = 0;
+    double totalSecond = 0;
+    double LOW_POINT = 0;
+    double HIGH_POINT = 0;
+
+    final int HIGH_NUMBER = 7500;
+    final int LOW_NUMBER = HIGH_NUMBER/2;
+
+    int lowpointInt = 0;
+    int highpointInt = 0;
+
+
     public void main (View view){
+
+
+
         System.out.println(averageegg);
+
     }
 
   public static double accelforward;
@@ -182,7 +202,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         accelup = data.get(Accelerometer.UP_DOWN.ordinal());
                         accelleft = data.get(Accelerometer.LEFT_RIGHT.ordinal());
 
-                        averageaccel = (accelforward+accelleft+accelup)/3.0;
+                        averageaccel = (accelforward + accelleft + accelup) / 3.0;
 
                     }
                 });
@@ -203,8 +223,34 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
                         averageegg = (eggtp9+eggfp1+eggfp2+eggtp10)/4.0;
 
-                        System.out.println(averageegg);
 
+                        if(calibrationCounter <= LOW_NUMBER){
+                            totalFirst += averageegg;
+                        }
+
+                        if(calibrationCounter == LOW_NUMBER){
+                            LOW_POINT = totalFirst/LOW_NUMBER;
+                            lowpointInt = (int)LOW_POINT;
+                            System.out.println("LOWPOINT \t" + lowpointInt);
+                        }
+
+                        if(calibrationCounter == HIGH_NUMBER){
+                            HIGH_POINT = LOW_POINT + (int)(Math.random()*20) + 131;
+                            highpointInt = (int)HIGH_POINT;
+                            System.out.println("HIGHPOINT \t" + highpointInt);
+                        }
+
+
+                        if(calibrationCounter > HIGH_NUMBER) {
+                            if (averageegg > LIMIT_STRESS_RANGE) {
+                                counter++;
+                                System.out.println("VALUE OF COUNTER:\t" + counter);
+                                System.out.println(averageegg);
+                            }
+                        }
+
+                        counter++;
+                        calibrationCounter++;
 
                     }
                 });
