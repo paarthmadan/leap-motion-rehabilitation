@@ -249,6 +249,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
                             }
                         }
 
+                        if(calibrationCounter % 665 == 0){
+                            EquationGenerator eg = new EquationGenerator();
+                            eg.createEquations("two");
+
+                        }
+
                         System.out.println(averageegg);
 
                         calibrationCounter++;
