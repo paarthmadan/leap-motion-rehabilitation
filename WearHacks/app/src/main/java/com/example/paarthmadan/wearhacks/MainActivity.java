@@ -1,4 +1,4 @@
-package com.example.paarthmadan.wearhacks2016;
+package com.example.paarthmadan.wearhacks;
 
 /**
  * Example of using libmuse library on android.
@@ -103,17 +103,17 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         TextView statusText =
                                 (TextView) findViewById(R.id.con_status);
                         statusText.setText(status);
-                        TextView museVersionText =
-                                (TextView) findViewById(R.id.version);
+
+
                         if (current == ConnectionState.CONNECTED) {
                             MuseVersion museVersion = muse.getMuseVersion();
                             String version = museVersion.getFirmwareType() +
                                     " - " + museVersion.getFirmwareVersion() +
                                     " - " + Integer.toString(
                                     museVersion.getProtocolVersion());
-                            museVersionText.setText(version);
+
                         } else {
-                            museVersionText.setText(R.string.undefined);
+
                         }
                     }
                 });
@@ -176,15 +176,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        TextView acc_x = (TextView) findViewById(R.id.acc_x);
-                        TextView acc_y = (TextView) findViewById(R.id.acc_y);
-                        TextView acc_z = (TextView) findViewById(R.id.acc_z);
-                        acc_x.setText(String.format(
-                                "%6.2f", data.get(Accelerometer.FORWARD_BACKWARD.ordinal())));
-                        acc_y.setText(String.format(
-                                "%6.2f", data.get(Accelerometer.UP_DOWN.ordinal())));
-                        acc_z.setText(String.format(
-                                "%6.2f", data.get(Accelerometer.LEFT_RIGHT.ordinal())));
+
 
                         accelforward = data.get(Accelerometer.FORWARD_BACKWARD.ordinal());
                         accelup = data.get(Accelerometer.UP_DOWN.ordinal());
@@ -203,19 +195,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        TextView tp9 = (TextView) findViewById(R.id.eeg_tp9);
-                        TextView fp1 = (TextView) findViewById(R.id.eeg_fp1);
-                        TextView fp2 = (TextView) findViewById(R.id.eeg_fp2);
-                        TextView tp10 = (TextView) findViewById(R.id.eeg_tp10);
-                        tp9.setText(String.format(
-                                "%6.2f", data.get(Eeg.TP9.ordinal())));
-                        fp1.setText(String.format(
-                                "%6.2f", data.get(Eeg.FP1.ordinal())));
-                        fp2.setText(String.format(
-                                "%6.2f", data.get(Eeg.FP2.ordinal())));
-                        tp10.setText(String.format(
-                                "%6.2f", data.get(Eeg.TP10.ordinal())));
-
 
                         eggtp9 = data.get(Eeg.TP9.ordinal());
                         eggfp1 = data.get(Eeg.FP1.ordinal());
@@ -238,18 +217,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        TextView elem1 = (TextView) findViewById(R.id.elem1);
-                        TextView elem2 = (TextView) findViewById(R.id.elem2);
-                        TextView elem3 = (TextView) findViewById(R.id.elem3);
-                        TextView elem4 = (TextView) findViewById(R.id.elem4);
-                        elem1.setText(String.format(
-                                "%6.2f", data.get(Eeg.TP9.ordinal())));
-                        elem2.setText(String.format(
-                                "%6.2f", data.get(Eeg.FP1.ordinal())));
-                        elem3.setText(String.format(
-                                "%6.2f", data.get(Eeg.FP2.ordinal())));
-                        elem4.setText(String.format(
-                                "%6.2f", data.get(Eeg.TP10.ordinal())));
+
                     }
                 });
             }
