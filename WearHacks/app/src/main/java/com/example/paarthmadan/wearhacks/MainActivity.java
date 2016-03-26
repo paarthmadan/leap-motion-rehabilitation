@@ -74,19 +74,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     }
 
-  public static double accelforward;
-   public static double accelup;
+    public static double accelforward;
+    public static double accelup;
     public static double accelleft;
 
-  public static  double averageaccel;
+    public static  double averageaccel;
 
 
-  public  static double eggtp9;
-   public static double eggfp1;
-   public static double eggfp2;
-  public static  double eggtp10;
+    public  static double eggtp9;
+    public static double eggfp1;
+    public static double eggfp2;
+    public static  double eggtp10;
 
- public static   double averageegg;
+    public static   double averageegg;
 
 
 
@@ -249,9 +249,39 @@ public class MainActivity extends Activity implements View.OnClickListener {
                             }
                         }
 
-                        if(calibrationCounter % 665 == 0){
+                        if(calibrationCounter % 100 == 0){
                             EquationGenerator eg = new EquationGenerator();
-                            eg.createEquations("six");
+                            String [] eq1 = eg.createEquations("one");
+                            String [] eq2 = eg.createEquations("two");
+                            String [] eq3 = eg.createEquations("three");
+                            String [] eq4 = eg.createEquations("four");
+                            String [] eq5 = eg.createEquations("five");
+                            String [] eq6 = eg.createEquations("six");
+
+                            for(int i = 0; i < eq1.length; i++){
+                                System.out.println(eq1[i]);
+                            }
+
+                            for(int i = 0; i < eq2.length; i++){
+                                System.out.println(eq2[i]);
+                            }
+
+                            for(int i = 0; i < eq3.length; i++){
+                                System.out.println(eq3[i]);
+                            }
+
+                            for(int i = 0; i < eq4.length; i++){
+                                System.out.println(eq4[i]);
+                            }
+
+                            for(int i = 0; i < eq5.length; i++){
+                                System.out.println(eq5[i]);
+                            }
+
+                            for(int i = 0; i < eq6.length; i++){
+                                System.out.println(eq6[i]);
+                            }
+
 
                         }
 

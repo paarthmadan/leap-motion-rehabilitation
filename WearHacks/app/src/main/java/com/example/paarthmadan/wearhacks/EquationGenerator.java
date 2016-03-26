@@ -6,13 +6,19 @@ package com.example.paarthmadan.wearhacks;
 public class EquationGenerator {
     final int QUESTIONS_PER_LEVEL = 5;
     String level;
+    String [] equations1;
+    String [] equations2;
+    String [] equations3;
+    String [] equations4;
+    String [] equations5;
+    String [] equations6;
 
-
-
-    public void createEquations(String level){
+    public String[] createEquations(String level){
 
         switch (level){
             case "one":
+
+                 equations1 = new String [QUESTIONS_PER_LEVEL + 1];
 
                 for(int i = 0; i <= QUESTIONS_PER_LEVEL; i++){
 
@@ -28,15 +34,28 @@ public class EquationGenerator {
 
                     int secondNum = (int)(Math.random() * 10) + 1;
 
-                    System.out.println(firstNum + " " + operator + " " + secondNum);
+                    if(secondNum > firstNum){
+                        int temp = firstNum;
 
+                        firstNum = secondNum;
+
+                        secondNum = temp;
+                    }
+
+                    String finalEq = firstNum + " " + operator + " " + secondNum;
+
+                    
+
+                    equations1[i] = finalEq;
 
 
                 }
 
+
                 break;
             case "two":
 
+                equations2 = new String [QUESTIONS_PER_LEVEL  + 1];
                 for(int i = 0; i <= QUESTIONS_PER_LEVEL; i++){
 
                     int firstNum = (int)(Math.random() * 90) + 10;
@@ -51,14 +70,28 @@ public class EquationGenerator {
 
                     int secondNum = (int)(Math.random() * 90) + 10;
 
-                    System.out.println(firstNum + " " + operator + " " + secondNum);
+                    if(secondNum > firstNum){
+                        int temp = firstNum;
 
+                        firstNum = secondNum;
+
+                        secondNum = temp;
+                    }
+
+                    String finalEq = firstNum + " " + operator + " " + secondNum;
+
+                    
+
+                    equations2[i] = finalEq;
 
                 }
 
 
+
                 break;
             case "three":
+
+                equations3 = new String [QUESTIONS_PER_LEVEL + 1];
 
                 for(int i = 0; i <= QUESTIONS_PER_LEVEL; i++){
 
@@ -90,13 +123,20 @@ public class EquationGenerator {
                         }
                     }
 
-                    System.out.println(firstNum + " " + operator + " " + secondNum);
+                    String finalEq = firstNum + " " + operator + " " + secondNum;
+
+                    
+
+                    equations3[i] = finalEq;
+
 
                 }
 
 
                 break;
             case "four":
+
+                equations4 = new String [QUESTIONS_PER_LEVEL + 1];
 
                 for(int i = 0; i <= QUESTIONS_PER_LEVEL; i++){
 
@@ -122,7 +162,12 @@ public class EquationGenerator {
                         secondNum = temp;
                     }
 
-                    System.out.println(firstNum + " " + operator + " " + secondNum);
+                    String finalEq = firstNum + " " + operator + " " + secondNum;
+
+                    
+
+                    equations4[i] = finalEq;
+
 
 
                 }
@@ -130,6 +175,8 @@ public class EquationGenerator {
 
                 break;
             case "five":
+
+                equations5 = new String [QUESTIONS_PER_LEVEL + 1];
 
                 for(int i = 0; i <= QUESTIONS_PER_LEVEL; i++){
 
@@ -161,12 +208,19 @@ public class EquationGenerator {
                         }
 
                     }
-                    System.out.println(firstNum + " " + operator + " " + secondNum);
+                    String finalEq = firstNum + " " + operator + " " + secondNum;
+
+                    
+
+                    equations5[i] = finalEq;
 
                 }
 
                 break;
             case "six":
+
+                equations6 = new String [QUESTIONS_PER_LEVEL + 1];
+
                 for(int i = 0; i <= QUESTIONS_PER_LEVEL; i++){
 
                     int firstNum = (int)(Math.random() * 900) + 100;
@@ -183,20 +237,34 @@ public class EquationGenerator {
                     int secondNum = (int) (Math.random() * 90) + 10;
 
 
-                    System.out.println(firstNum + " " + operator + " " + secondNum);
+                    String finalEq = firstNum + " " + operator + " " + secondNum;
+
+                    
+
+                    equations6[i] = finalEq;
+
 
                 }
-
-
                 break;
             default:
                 break;
         }
 
+        if(level == "one"){
+            return equations1;
+        }else if(level == "two"){
+            return equations2;
+        }else if(level == "three"){
+            return equations3;
+        }else if(level == "four"){
+            return equations4;
+        }else if(level == "five"){
+            return equations5;
+        }else if(level == "six"){
+            return equations6;
+        }
+
+        return null;
 
     }
-
-
-
-
 }
