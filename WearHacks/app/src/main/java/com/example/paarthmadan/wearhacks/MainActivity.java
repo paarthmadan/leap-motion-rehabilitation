@@ -59,7 +59,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     double LOW_POINT = 0;
     double HIGH_POINT = 0;
 
-    final int HIGH_NUMBER = 7500;
+    final int HIGH_NUMBER = 5000;
     final int LOW_NUMBER = HIGH_NUMBER/2;
 
     int lowpointInt = 0;
@@ -185,9 +185,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         @Override
         public void receiveMuseArtifactPacket(MuseArtifactPacket p) {
-            if (p.getHeadbandOn() && p.getBlink()) {
+            /*if (p.getHeadbandOn() && p.getBlink()) {
                 Log.i("Artifacts", "blink");
-            }
+            }*/
         }
 
         private void updateAccelerometer(final ArrayList<Double> data) {
@@ -235,21 +235,22 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         }
 
                         if(calibrationCounter == HIGH_NUMBER){
-                            HIGH_POINT = LOW_POINT + (int)(Math.random()*20) + 131;
+                            HIGH_POINT = LOW_POINT + (int)(Math.random()*20) + 450;
                             highpointInt = (int)HIGH_POINT;
                             System.out.println("HIGHPOINT \t" + highpointInt);
                         }
 
 
                         if(calibrationCounter > HIGH_NUMBER) {
-                            if (averageegg > LIMIT_STRESS_RANGE) {
+                            if (averageegg > highpointInt) {
                                 counter++;
                                 System.out.println("VALUE OF COUNTER:\t" + counter);
                                 System.out.println(averageegg);
                             }
                         }
 
-                        counter++;
+                        System.out.println(averageegg);
+
                         calibrationCounter++;
 
                     }
