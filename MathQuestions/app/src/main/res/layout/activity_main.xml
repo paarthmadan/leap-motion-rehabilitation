@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="396dp"
+            android:background="#ee2560">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30 x 30"
+                android:id="@+id/sumTextView"
+                android:textColor="#FFF"
+                android:textSize="100dp"
+                android:textIsSelectable="false"
+                android:textStyle="bold"
+                android:layout_marginTop="80dp"
+                android:layout_marginLeft="14.5dp"
+                android:layout_marginRight="14.5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Score: 0"
+                android:id="@+id/scoreTextView"
+                android:textSize="25dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginLeft="10dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="307dp"
+            android:layout_gravity="center_horizontal|bottom"
+            android:background="#45d9fd"
+            android:weightSum="1">
+
+            <EditText
+                android:layout_width="300dp"
+                android:layout_height="10dp"
+                android:id="@+id/userText"
+                android:layout_weight="0.41"
+                android:inputType="number"
+                android:background="#EEEEEE"
+                android:clickable="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:textColor="#08182b"
+                android:elegantTextHeight="false"
+                android:textSize="90dp"
+                android:textAlignment="center">
+            </EditText>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Check Answer"
+                android:id="@+id/button"
+                android:layout_weight="0.41"
+                android:textSize="30dp"
+                android:textColor="#FFF"
+                android:textAlignment="center"
+                android:layout_marginTop="50dp"
+                android:onClick="chooseAnswer"
+                android:background="#46d9fd" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/resultTextView"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.41"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+</RelativeLayout>
