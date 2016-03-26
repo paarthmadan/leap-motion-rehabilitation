@@ -74,18 +74,20 @@ public class EquationGenerator {
 
                     boolean isSecondDivisbleByFirst = false;
 
-                    int secondNum = 0;
+                    int secondNum = (int) (Math.random() * 9) + 1;
 
-                    while(!isSecondDivisbleByFirst) {
+                    if(operator.equals("/")) {
 
-                        secondNum = (int) (Math.random() * 9) + 1;
+                        while (!isSecondDivisbleByFirst) {
 
-                        if(firstNum % secondNum == 0) {
-                            isSecondDivisbleByFirst=true;
+                            secondNum = (int) (Math.random() * 9) + 1;
+
+                            if (firstNum % secondNum == 0) {
+                                isSecondDivisbleByFirst = true;
+                            }
+
+
                         }
-
-
-
                     }
 
                     System.out.println(firstNum + " " + operator + " " + secondNum);
@@ -128,8 +130,64 @@ public class EquationGenerator {
 
                 break;
             case "five":
+
+                for(int i = 0; i <= QUESTIONS_PER_LEVEL; i++){
+
+                    int firstNum = (int)(Math.random() * 900) + 100;
+                    int operatorBool = (int)((Math.random() * 2) + 1);
+                    String operator = "";
+
+                    if(operatorBool == 1){
+                        operator = "/";
+                    }else if(operatorBool == 2){
+                        operator = "/";
+                    }
+
+                    boolean isSecondDivisbleByFirst = false;
+
+                    int secondNum = (int) (Math.random() * 90) + 10;
+
+                    if(operator.equals("/")) {
+
+                        while (!isSecondDivisbleByFirst) {
+
+                            secondNum = (int) (Math.random() * 90) + 10;
+
+                            if (firstNum % secondNum == 0) {
+                                isSecondDivisbleByFirst = true;
+                            }
+
+
+                        }
+
+                    }
+                    System.out.println(firstNum + " " + operator + " " + secondNum);
+
+                }
+
                 break;
             case "six":
+                for(int i = 0; i <= QUESTIONS_PER_LEVEL; i++){
+
+                    int firstNum = (int)(Math.random() * 900) + 100;
+                    int operatorBool = (int)((Math.random() * 2) + 1);
+                    String operator = "";
+
+                    if(operatorBool == 1){
+                        operator = "*";
+                    }else if(operatorBool == 2){
+                        operator = "*";
+                    }
+
+
+                    int secondNum = (int) (Math.random() * 90) + 10;
+
+
+                    System.out.println(firstNum + " " + operator + " " + secondNum);
+
+                }
+
+
                 break;
             default:
                 break;
