@@ -1,3 +1,25 @@
 body{
-	background-color: #3BDAFF;
+	/*background-color: #3BDAFF;*/
+	background-color: #eaeaea;
+	font-family: 'Open Sans', sans-serif;
+
+}
+
+.card{
+	text-align: center;
+}
+
+html{
+	overflow-x: hidden;
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3{
+	font-family: 'Passion One', cursive;
+}
+
+.navbar, .navbar-brand, .footer{
+	font-family: 'Passion One', cursive;
+	font-size: 25px;
+
 }
