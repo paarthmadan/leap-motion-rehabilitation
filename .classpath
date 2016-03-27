@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="MathQuestions/app/src/androidTest/java"/>
+	<classpathentry kind="src" path="MathQuestions/app/src/main/java"/>
+	<classpathentry kind="src" path="MathQuestions/app/src/test/java"/>
+	<classpathentry kind="src" path="WearHacks/app/build/generated/source/buildConfig/androidTest/debug"/>
+	<classpathentry kind="src" path="WearHacks/app/build/generated/source/buildConfig/debug"/>
+	<classpathentry kind="src" path="WearHacks/app/build/generated/source/r/debug"/>
+	<classpathentry kind="src" path="WearHacks/app/src/androidTest/java"/>
+	<classpathentry kind="src" path="WearHacks/app/src/main/java"/>
+	<classpathentry kind="src" path="WearHacks/app/src/test/java"/>
+	<classpathentry kind="lib" path="MathQuestions/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="WearHacks/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"/>
+	<classpathentry kind="lib" path="WearHacks/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"/>
+	<classpathentry kind="lib" path="WearHacks/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"/>
+	<classpathentry kind="lib" path="WearHacks/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"/>
+	<classpathentry kind="lib" path="WearHacks/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"/>
+	<classpathentry kind="lib" path="WearHacks/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.1.1_e978ae9e0b5ec80288018122a3e8ed88300de2e2.jar"/>
+	<classpathentry kind="lib" path="WearHacks/app/build/intermediates/pre-dexed/debug/com.android.support-design-23.1.1_c3bcc4a14f25fcac2ddeb81455c837a078206e49.jar"/>
+	<classpathentry kind="lib" path="WearHacks/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.1.1_c905b39e248a8b68370d54d230540a54a6bfff11.jar"/>
+	<classpathentry kind="lib" path="WearHacks/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.1.1_2cea2d84c6c3d988a8634da529e94b1b14816717.jar"/>
+	<classpathentry kind="lib" path="WearHacks/app/build/intermediates/pre-dexed/debug/debug_bf5f137a62b3ae7de789a31795cedd4c80603312.jar"/>
+	<classpathentry kind="lib" path="WearHacks/app/build/intermediates/pre-dexed/debug/internal_impl-23.1.1_72c7069765dbc38c8dd31ccc78d28c7876eb1ba2.jar"/>
+	<classpathentry kind="lib" path="WearHacks/app/build/intermediates/pre-dexed/debug/libmuseandroid_eb4672165458dc65597e664e22ceef7b24252999.jar"/>
+	<classpathentry kind="lib" path="WearHacks/app/build/intermediates/pre-dexed/debug/support-annotations-23.1.1_61b73610e4591d522b0cf1e04297ee41054826c8.jar"/>
+	<classpathentry kind="lib" path="WearHacks/app/libs/libmuseandroid.jar"/>
+	<classpathentry kind="lib" path="WearHacks/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="WearHacks/app/build/intermediates/classes/debug"/>
+</classpath>

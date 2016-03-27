@@ -210,8 +210,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
 
         private void updateEeg(final ArrayList<Double> data) {
+
+
             Activity activity = activityRef.get();
+
             if (activity != null) {
+
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -235,7 +239,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         }
 
                         if(calibrationCounter == HIGH_NUMBER){
-                            HIGH_POINT = LOW_POINT + (int)(Math.random()*20) + 450;
+                            HIGH_POINT = LOW_POINT + (int)(Math.random()*20) + 300;
                             highpointInt = (int)HIGH_POINT;
                             System.out.println("HIGHPOINT \t" + highpointInt);
                         }
@@ -245,47 +249,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
                             if (averageegg > highpointInt) {
                                 counter++;
                                 System.out.println("VALUE OF COUNTER:\t" + counter);
-                                System.out.println(averageegg);
+//                                System.out.println(averageegg);
                             }
                         }
+//
+//
 
-                        if(calibrationCounter % 100 == 0){
-                            EquationGenerator eg = new EquationGenerator();
-                            String [] eq1 = eg.createEquations("one");
-                            String [] eq2 = eg.createEquations("two");
-                            String [] eq3 = eg.createEquations("three");
-                            String [] eq4 = eg.createEquations("four");
-                            String [] eq5 = eg.createEquations("five");
-                            String [] eq6 = eg.createEquations("six");
-
-                            for(int i = 0; i < eq1.length; i++){
-                                System.out.println(eq1[i]);
-                            }
-
-                            for(int i = 0; i < eq2.length; i++){
-                                System.out.println(eq2[i]);
-                            }
-
-                            for(int i = 0; i < eq3.length; i++){
-                                System.out.println(eq3[i]);
-                            }
-
-                            for(int i = 0; i < eq4.length; i++){
-                                System.out.println(eq4[i]);
-                            }
-
-                            for(int i = 0; i < eq5.length; i++){
-                                System.out.println(eq5[i]);
-                            }
-
-                            for(int i = 0; i < eq6.length; i++){
-                                System.out.println(eq6[i]);
-                            }
-
-
-                        }
-
-                        System.out.println(averageegg);
+//                        System.out.println(averageegg);
 
                         calibrationCounter++;
 
