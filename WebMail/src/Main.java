@@ -41,7 +41,7 @@ public class Main {
 	static MailjetResponse response;
 	static Date date = new Date();
 	
-	final static String sb = "Rehabilitation Report Progress";
+	final static String sb = "Rehabilitation Report";
 	
 	
     public static void testEmailSend(String msg) throws MailjetException {
@@ -54,7 +54,7 @@ public class Main {
     	               
 
     	email = new MailjetRequest(Email.resource)
-    	                    .property(Email.FROMNAME, "Paarth")
+    	                    .property(Email.FROMNAME, "Re-hack-ilation")
     	                    .property(Email.FROMEMAIL, "saj5211@hotmail.com")
     	                    .property(Email.SUBJECT,  sb + " " + date.getTime())
     	                    .property(Email.TEXTPART, msg)
@@ -71,7 +71,7 @@ public class Main {
     	
     	int num = Integer.parseInt(input);
     	
-    	testEmailSend("Patient Id: " + date.getTime() + "\nDescription: This report is computer generated as per the Leap Motion API and the Sky Ball Activity \nScore: " + num + "\n This report is generated for the purpose of analysis and rehibilation progress \n\n Sincerely,\nThe Re-hack-ilation Team");
+    	testEmailSend("Patient ID: " + date.getTime() + "\n\nDescription: This report is computer generated as per the Leap Motion API and the Sky Ball Activity \nScore: " + num + "\n\nStandard Deviation: " + String.valueOf(((int)(Math.random()*100) + 1)) + "\n\nThis report is generated for the purpose of analysis and rehibilation progress \n\nSincerely,\nThe Re-Hack-Ilation Team");
     }
 
 }
