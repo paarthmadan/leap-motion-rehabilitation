@@ -1,6 +1,7 @@
 
 
 import com.mailjet.client.MailjetClient;
+
 import com.mailjet.client.MailjetRequest;
 import com.mailjet.client.MailjetResponse;
 import com.mailjet.client.easy.MJEasyClient;
@@ -20,6 +21,9 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.Assert;
 
+import javax.swing.JOptionPane;
+
+
 class Person {
     final String email, name;
 
@@ -37,7 +41,10 @@ public class Main {
 	static MailjetResponse response;
 	static Date date = new Date();
 	
-    public static void testEmailSend() throws MailjetException {
+	final static String sb = "Rehabilitation Report Progress";
+	
+	
+    public static void testEmailSend(String msg) throws MailjetException {
 
     	recipients = new JSONArray()
     	                .put(new JSONObject().put(Contact.EMAIL, "madanhockey@gmail.com"))
@@ -49,8 +56,8 @@ public class Main {
     	email = new MailjetRequest(Email.resource)
     	                    .property(Email.FROMNAME, "Paarth")
     	                    .property(Email.FROMEMAIL, "saj5211@hotmail.com")
-    	                    .property(Email.SUBJECT, "API Test " + date.getTime())
-    	                    .property(Email.TEXTPART, "Java is coming!...")
+    	                    .property(Email.SUBJECT,  sb + " " + date.getTime())
+    	                    .property(Email.TEXTPART, msg)
     	                    .property(Email.RECIPIENTS, recipients)
     	                    .property(Email.MJCUSTOMID, "JAVA-Email");
 
@@ -59,8 +66,12 @@ public class Main {
 
     }
     public static void main(String[] args) throws MailjetException {
-        System.out.println("Hello World!"); // Display the string.
-        testEmailSend();
+        
+    	String input = JOptionPane.showInputDialog(null, "Please enter the score you obtained after 10 minutes of playing:");
+    	
+    	int num = Integer.parseInt(input);
+    	
+    	testEmailSend("Patient Id: " + date.getTime() + "\nDescription: This report is computer generated as per the Leap Motion API and the Sky Ball Activity \nScore: " + num + "\n This report is generated for the purpose of analysis and rehibilation progress \n\n Sincerely,\nThe Re-hack-ilation Team");
     }
 
 }
