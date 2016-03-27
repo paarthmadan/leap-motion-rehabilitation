@@ -29,15 +29,17 @@
 
 
            var dataY = (normalized[1] * 1000);
-           // document.getElementById("text").innerHTML = dataY;
+          // document.getElementById("text").innerHTML = dataY;
 
            y = (dataY / 2.45) - 350;
 
            y *= -1;
+           var dataX = (normalized[0]* 900)
+           // document.getElementById("text2").innerHTML = dataX;
 
-           console.log(y);
+           x=dataX
 
        });
       })
   }
-      setInterval(draw, 25)
+      setInterval(draw, 50)
