@@ -5,6 +5,7 @@
       var y = canvas.height/2 +200;
       var dy= 0;
       var randomX;
+      var isScoredChecker = false;
 
       var SPEED_OF_ANIMATION = 2000;
 
@@ -73,20 +74,33 @@
 
 
 
-randomX = Math.floor((Math.random() * canvas.width) + 1);
+
 
 // var tid2 = setTimeout(larger,1000);
 
-var noballs = 1;
+createBall();
 
 
 
-if(noballs == 1){
-        $("#cartoonBallImg").css("top", "0px");
+
+
+function createBall(){
+
+
+    isScoredChecker = false;
+
+  randomX = Math.floor((Math.random() * canvas.width) + 1);
+
+        $("#cartoonBallImg").css("top", 0);
         $("#cartoonBallImg").css("left", randomX + "px");
-        $("#cartoonBallImg").animate({top: canvas.height/2 +400}, SPEED_OF_ANIMATION);
+        $("#cartoonBallImg").animate({top: canvas.height/2 +400}, SPEED_OF_ANIMATION, function complete(){
+          createBall();
+        });
 
-      }
+
+
+}
+
 
 
 
@@ -105,11 +119,19 @@ function checkPos(){
         console.log(leftBall + "     "+leftHoop);
         
         if (Math.abs((leftHoop)-(leftBall))<50 && Math.abs(topHoop-topBall) < 250){
-            counter++;
 
-            if(counter == 1){
-            alert("success" + leftHoop + " "+ leftBall);
+          
+
+
+          if(isScoredChecker == false){
+              counter+=1;
+              isScoredChecker = true;
           }
+
+
+            $("#score").html(counter);
+
+
         }
 
 
