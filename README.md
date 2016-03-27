@@ -9,8 +9,8 @@ ___
 - Advanced motion technology to isolate muscles and nerves for best rehabilitation possible
 - Gesture control for easy use and interactive  UI
 ##### Libraries Used
+
 ###### Leap Motion SDK
-#
 ```sh
 <script src="http://js.leapmotion.com/leap-0.4.2.js"></script>
 ```
