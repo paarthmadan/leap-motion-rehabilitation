@@ -3,9 +3,7 @@
       var x = canvas.width/2;
       var y = canvas.height/2;
       ballRadius = 10;
-      var dx = 5
-      var dy = -5
-
+    
 
       function drawObj(){
       	ct.beginPath();
@@ -16,31 +14,30 @@
       }
 
       function draw(){
-      	drawObj()
+      	
+        ct.clearRect(0,0,canvas.width, canvas.height);
+        drawObj();
+
+
+
       Leap.loop({enableGestures: true}, function(frame) {
 
           frame.pointables.forEach(function(pointable) {
           var position = pointable.stabilizedTipPosition;
           normalized = frame.interactionBox.normalizePoint(position);
           hand = frame.hands.length
-         // console.log("hand " + hand)
-          //console.log("normalized " + normalized)
-          if (normalized[2]/100 > 355){
-            x += normalized[2]/100
-            //console.log("x1 "+ x)
-          }else{
-            x+= normalized[2]/-100
-            //console.log("x2 "+ x)
-          }
-          if (normalized[1] > 275){
-            y += normalized[1]/100
-           // console.log("y1 "+ x)
-          }else{
-            y+= normalized[1]/-100
-           //console.log("y2 "+ x)
-          }
+
+
+           var dataY = (normalized[1] * 1000);
+           // document.getElementById("text").innerHTML = dataY;
+
+           y = (dataY / 2.45) - 350;
+
+           y *= -1;
+
+           console.log(y);
 
        });
       })
   }
-      setInterval(draw, 10)
+      setInterval(draw, 25)
