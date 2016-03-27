@@ -8,7 +8,6 @@ ___
 - Fun Activities to help patients develop skills
 - Advanced motion technology to isolate muscles and nerves for best rehabilitation possible
 - Gesture control for easy use and interactive UI
-___
 ##### Libraries Used
 
 ###### Leap Motion SDK
