@@ -1,0 +1,46 @@
+html{
+	background: #BBDEFB;
+}
+
+#title{
+	font-family: 'Roboto', sans-serif;
+	font-size: 56px;
+	position: absolute;
+	top: 11vh;
+	left: 5vw;
+	color: white;
+}
+
+#descrip{
+	font-family: 'Roboto', sans-serif;
+	font-size: 25px;
+	position: absolute;
+	top: 20vh;
+	left: 5vw;
+	color: white;
+}
+
+#underline{
+
+  border-bottom: 1px dashed #999;
+  display: inline;
+
+}
+
+.important{
+	color: #42A5F5;
+}
+
+#button{
+	position: absolute;
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	background-color: #42A5F5;
+	width: 10vw;
+	height: 5vh;
+	text-align: center;
+	color: white;
+	line-height: 5vh;
+	top: 45vh;
+	left: 5vw;
+}
