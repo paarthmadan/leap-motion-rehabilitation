@@ -4,7 +4,6 @@
       var y = canvas.height/2 - 75;
 
       var img=document.getElementById("cartoonImg");
-      var ball = document.getElementById("cartoonBallImg");
 
     var FRAMES_PER_SECOND = 50;
     var RATIO_CANVAS_TO_LEAP = 2.45;
@@ -23,6 +22,11 @@
           x = 1100;
         }
 
+        if(y < 20){
+          y = 20;
+        }else if(y > 1200){
+          y = 1200;
+        }
 
         ct.drawImage(cartoonImg, x, y);
       	
