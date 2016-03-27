@@ -29,8 +29,8 @@
       function moveObj(){
         if(x < 0){
           x = 0;
-        }else if(x > 1650){
-          x = 1650;
+        }else if(x > canvas.width){
+          x = canvas.width;
         }
 
         if(y < 20){
