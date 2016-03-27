@@ -50,7 +50,7 @@ public class Main {
 
     	recipients = new JSONArray()
     	                .put(new JSONObject().put(Contact.EMAIL, "madanhockey@gmail.com"))
-    					.put(new JSONObject().put(Contact.EMAIL, "ashpanr@gmail.com"))
+    					.put(new JSONObject().put(Contact.EMAIL, "ashpanthetrashcan@gmail.com"))
     					.put(new JSONObject().put(Contact.EMAIL, "darshil4133@gmail.com"));
     	
     	               
