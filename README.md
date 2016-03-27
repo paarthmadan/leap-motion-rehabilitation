@@ -5,11 +5,11 @@ ___
 #
 #
 ##### What is it?
-- ######  Fun Activities to help patients develop skills
-- ###### Advanced motion technology to isolate muscles and nerves for best rehabilitation possible
-- ###### Gesture control for easy use and interactive  UI
+- Fun Activities to help patients develop skills
+- Advanced motion technology to isolate muscles and nerves for best rehabilitation possible
+- Gesture control for easy use and interactive  UI
 ##### Libraries Used
-######  Leap Motion SDK
+###### Leap Motion SDK
 #
 ```sh
 <script src="http://js.leapmotion.com/leap-0.4.2.js"></script>
