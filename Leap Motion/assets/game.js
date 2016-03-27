@@ -15,6 +15,9 @@
       var ball = document.getElementById("cartoonBallImg");
 
 
+      // var background = new Image();
+      // background.src = "assets/BG.png";
+
       
       var counter = 0;
 
@@ -26,8 +29,8 @@
       function moveObj(){
         if(x < 0){
           x = 0;
-        }else if(x > 1100){
-          x = 1100;
+        }else if(x > 1650){
+          x = 1650;
         }
 
         if(y < 20){
@@ -35,7 +38,7 @@
         }else if(y > 1200){
           y = 1200;
         }
-
+        // ct.drawImage(background,0,0);  
         ct.drawImage(img, x, y);
         
       }
@@ -89,7 +92,7 @@ function createBall(){
 
     isScoredChecker = false;
 
-  randomX = Math.floor((Math.random() * canvas.width) + 1);
+  randomX = Math.floor((Math.random() * (canvas.width-300)) + 1);
 
         $("#cartoonBallImg").css("top", 0);
         $("#cartoonBallImg").css("left", randomX + "px");
@@ -129,7 +132,7 @@ function checkPos(){
           }
 
 
-            $("#score").html(counter);
+            $("#score").html("Score: "+ counter);
 
 
         }

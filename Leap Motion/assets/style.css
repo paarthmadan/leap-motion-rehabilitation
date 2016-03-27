@@ -1,5 +1,11 @@
 #theCanvas{
 	background-color: white;
+	background: url(BG.png);
+	position: absolute;
+	top: 0vw;
+	left: 0vw;
+	width: 100vw;
+	
 
 }
 #cartoonImg{
@@ -22,10 +28,23 @@ opacity: 0;
 	display: none;
 }
 #score{
-	top: 0px;
+	top: 5vh;
 	position: absolute;
-	width: 50px;
+	width: 20vw;
 	height: 50px;
 	right: 50px;
 	font-size: 48px;
+	left: 40vw;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	color: white;
+}
+
+#title{
+	font-family: 'Roboto', sans-serif;
+	font-size: 56px;
+	position: absolute;
+	top: 2vh;
+	left: 5vw;
+	color: white;
 }
