@@ -1,19 +1,29 @@
+ 
+
+
  var canvas = document.getElementById("theCanvas");
       var ct = canvas.getContext("2d");
       var x = canvas.width/2;
       var y = canvas.height/2 - 75;
+      var dy= 0;
+
+
+
+      var TIME_OF_CALL = 2000;
 
       var img=document.getElementById("cartoonImg");
-
-    var FRAMES_PER_SECOND = 50;
-    var RATIO_CANVAS_TO_LEAP = 2.45;
-    var OFFSET = 350;
+      var ball = document.getElementById("cartoonBallImg");
 
 
-      ballRadius = 10;
+      
+
+
+      var FRAMES_PER_SECOND = 50;
+      var RATIO_CANVAS_TO_LEAP = 2.45;
+      var OFFSET = 350;
     
 
-      function drawObj(){
+      function moveObj(){
         if(x < 0){
           x = 0;
         }else if(x > 1100){
@@ -30,31 +40,43 @@
         
       }
 
+
+      function spawnBall(){
+
+
+
+        ct.drawImage(cartoonBallImg, 600, dy);
+
+      }
+
+
+
       function draw(){
-        
-        ct.clearRect(0,0,canvas.width, canvas.height);
-        drawObj();
+        ct.clearRect(0,0,canvas.width, canvas.height); 
+        moveObj();
+        spawnBall(dy += 10);
+        console.log(dy)
 
 
 
-      Leap.loop({enableGestures: true}, function(frame) {
+          Leap.loop({enableGestures: true}, function(frame) {
 
-          frame.pointables.forEach(function(pointable) {
-          var position = pointable.stabilizedTipPosition;
-          normalized = frame.interactionBox.normalizePoint(position);
-          hand = frame.hands.length
+              frame.pointables.forEach(function(pointable) {
+              var position = pointable.stabilizedTipPosition;
+              normalized = frame.interactionBox.normalizePoint(position);
+              hand = frame.hands.length;
 
+               var dataX = (normalized[0]* 900);
 
-           //var dataY = (normalized[1] * 1000);
+               x=dataX;
 
-           //y = (dataY / RATIO_CANVAS_TO_LEAP) - OFFSET;
+           });
+          });
+      }
 
-           //y *= -1;
-           var dataX = (normalized[0]* 900);
-
-           x=dataX
-
-       });
-      })
-  }
       setInterval(draw, FRAMES_PER_SECOND);
+
+
+
+
+
