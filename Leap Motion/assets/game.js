@@ -6,7 +6,7 @@
       var x = canvas.width/2;
       var y = canvas.height/2 - 75;
       var dy= 0;
-
+      var randomX;
 
 
       var TIME_OF_CALL = 2000;
@@ -45,7 +45,10 @@
 
 
 
-        ct.drawImage(cartoonBallImg, 600, dy);
+        
+
+
+        ct.drawImage(cartoonBallImg,randomX, dy);
 
       }
 
@@ -54,7 +57,7 @@
       function draw(){
         ct.clearRect(0,0,canvas.width, canvas.height); 
         moveObj();
-        spawnBall(dy += 10);
+        
         console.log(dy)
 
 
@@ -76,6 +79,18 @@
 
       setInterval(draw, FRAMES_PER_SECOND);
 
+
+window.setInterval(function(){
+
+randomX = Math.floor((Math.random() * canvas.width) + 1);
+
+
+    window.setInterval(function(){
+  spawnBall(dy += 10, randomX);
+}, 25);
+
+  
+}, 2500);
 
 
 
