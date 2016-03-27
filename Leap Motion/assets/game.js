@@ -17,7 +17,7 @@
 
       function draw(){
       	drawObj()
-         Leap.loop({enableGestures: true}, function(frame) {
+      Leap.loop({enableGestures: true}, function(frame) {
 
           frame.pointables.forEach(function(pointable) {
           var position = pointable.stabilizedTipPosition;
@@ -25,18 +25,22 @@
           hand = frame.hands.length
          // console.log("hand " + hand)
           //console.log("normalized " + normalized)
-         // if (normalized[2]/100 > 355){
-          //  x += normalized[2]/-200
+          if (normalized[2]/100 > 355){
+            x += normalized[2]/100
             //console.log("x1 "+ x)
-          //}else{
-            //x+= normalized[2]/200
+          }else{
+            x+= normalized[2]/-100
             //console.log("x2 "+ x)
-          y = normalized[1]*-100;
-          //x = normalized[1]*100;
+          }
+          if (normalized[1] > 275){
+            y += normalized[1]/100
+           // console.log("y1 "+ x)
+          }else{
+            y+= normalized[1]/-100
+           //console.log("y2 "+ x)
+          }
 
-          console.log( " \t" + y); 
        });
-    
-  })
-    }
+      })
+  }
       setInterval(draw, 10)
